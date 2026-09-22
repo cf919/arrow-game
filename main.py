@@ -1,18 +1,18 @@
 import pygame
 import sys
 # 常量定义
-WIDTH = 800
-HEIGHT = 600
-GRID_SIZE = 80
-GRID_OFFSET_X = 80
-GRID_OFFSET_Y = 120
-MAX_MISTAKE = 3
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GRAY = (120, 120, 120)
-BLUE = (30, 80, 220)
-RED = (220, 30, 30)
-YELLOW = (255, 200, 0)
+# WIDTH = 800
+# HEIGHT = 600
+# GRID_SIZE = 80
+# GRID_OFFSET_X = 80
+# GRID_OFFSET_Y = 120
+# MAX_MISTAKE = 3
+# WHITE = (255, 255, 255)
+# BLACK = (0, 0, 0)
+# GRAY = (120, 120, 120)
+# BLUE = (30, 80, 220)
+# RED = (220, 30, 30)
+# YELLOW = (255, 200, 0)
 # 游戏状态
 STATE_START = 0
 STATE_PLAY = 1
