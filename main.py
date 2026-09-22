@@ -1,36 +1,36 @@
-# import pygame
-# import sys
-# # 常量定义
-# WIDTH = 800
-# HEIGHT = 600
-# GRID_SIZE = 80
-# GRID_OFFSET_X = 80
-# GRID_OFFSET_Y = 120
-# MAX_MISTAKE = 3
-# WHITE = (255, 255, 255)
-# BLACK = (0, 0, 0)
-# GRAY = (120, 120, 120)
-# BLUE = (30, 80, 220)
-# RED = (220, 30, 30)
-# YELLOW = (255, 200, 0)
-# # 游戏状态
-# STATE_START = 0
-# STATE_PLAY = 1
-# STATE_WIN = 2
-# STATE_LOSE = 3
-# # 方向常量
-# DIR_RIGHT = 0
-# DIR_UP = 1
-# DIR_DOWN = 2
-# DIR_LEFT = 3
+import pygame
+import sys
+# 常量定义
+WIDTH = 800
+HEIGHT = 600
+GRID_SIZE = 80
+GRID_OFFSET_X = 80
+GRID_OFFSET_Y = 120
+MAX_MISTAKE = 3
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (120, 120, 120)
+BLUE = (30, 80, 220)
+RED = (220, 30, 30)
+YELLOW = (255, 200, 0)
+# 游戏状态
+STATE_START = 0
+STATE_PLAY = 1
+STATE_WIN = 2
+STATE_LOSE = 3
+# 方向常量
+DIR_RIGHT = 0
+DIR_UP = 1
+DIR_DOWN = 2
+DIR_LEFT = 3
 # # 方向偏移：(行变化, 列变化)
 # DIR_DELTA = [
 #     (0, 1),   # 右
-    (-1, 0),  # 上
-    (1, 0),   # 下
-    (0, -1)   # 左
-]
-# 方向像素增量（飞行动画每帧移动像素）
+#     (-1, 0),  # 上
+#     (1, 0),   # 下
+#     (0, -1)   # 左
+# ]
+# # 方向像素增量（飞行动画每帧移动像素）
 DIR_PIXEL_DELTA = [
     (6, 0),   # 右
     (0, -6),  # 上
