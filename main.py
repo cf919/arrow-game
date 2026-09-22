@@ -47,57 +47,57 @@ DIR_SYMBOL = {
 class Arrow:
     def __init__(self, row, col, dire):
         self.row = row
-#         self.col = col
-#         self.dir = dire
-#         self.flash_timer = 0
-#         self.flying = False
-#         # 动画坐标，静止时等于格子中心
-#         self.anim_x, self.anim_y = self.get_center()
-#     def get_center(self):
-#         x = GRID_OFFSET_X + self.col * GRID_SIZE + GRID_SIZE // 2
-#         y = GRID_OFFSET_Y + self.row * GRID_SIZE + GRID_SIZE // 2
-#         return x, y
-#     def get_rect(self):
-#         return pygame.Rect(
-#             GRID_OFFSET_X + self.col * GRID_SIZE,
-#             GRID_OFFSET_Y + self.row * GRID_SIZE,
-#             GRID_SIZE,
-#             GRID_SIZE
-#         )
-#     def get_color(self):
-#         if self.flash_timer > 0:
-#             return RED
-#         return BLUE
-#     def start_fly(self):
-#         self.flying = True
-#         self.anim_x, self.anim_y = self.get_center()
-#     def update_anim(self):
-#         if not self.flying:
-#             return
-#         dx, dy = DIR_PIXEL_DELTA[self.dir]
-#         self.anim_x += dx
-#         self.anim_y += dy
-#     def is_out_of_screen(self):
-#         # 判断飞出可视区域
-#         return not (0 < self.anim_x < WIDTH and 0 < self.anim_y < HEIGHT)
-# class Game:
-#     def __init__(self):
-#         pygame.init()
-#         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
-#         pygame.display.set_caption("一箭又一箭")
-#         self.clock = pygame.time.Clock()
-#         self.state = STATE_START
-#         self.cur_level = 0
-#         self.arrows = []
-#         self.mistake_left = MAX_MISTAKE
-#         self.arrow_remain = 0
-#         self.font_big = pygame.font.SysFont("simhei", 36)
-#         self.font_mid = pygame.font.SysFont("simhei", 28)
-#         self.font_arrow = pygame.font.SysFont("simhei", 42)
-#         # 【修改】游玩界面重新开始按钮放在右上角，避开棋盘，不遮挡方格
-#         self.btn_restart = pygame.Rect(WIDTH - 140, 10, 130, 45)
-#         self.start_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 - 30, 200, 60)
-#         self.next_level_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 60)
+        self.col = col
+        self.dir = dire
+        self.flash_timer = 0
+        self.flying = False
+        # 动画坐标，静止时等于格子中心
+        self.anim_x, self.anim_y = self.get_center()
+    def get_center(self):
+        x = GRID_OFFSET_X + self.col * GRID_SIZE + GRID_SIZE // 2
+        y = GRID_OFFSET_Y + self.row * GRID_SIZE + GRID_SIZE // 2
+        return x, y
+    def get_rect(self):
+        return pygame.Rect(
+            GRID_OFFSET_X + self.col * GRID_SIZE,
+            GRID_OFFSET_Y + self.row * GRID_SIZE,
+            GRID_SIZE,
+            GRID_SIZE
+        )
+    def get_color(self):
+        if self.flash_timer > 0:
+            return RED
+        return BLUE
+    def start_fly(self):
+        self.flying = True
+        self.anim_x, self.anim_y = self.get_center()
+    def update_anim(self):
+        if not self.flying:
+            return
+        dx, dy = DIR_PIXEL_DELTA[self.dir]
+        self.anim_x += dx
+        self.anim_y += dy
+    def is_out_of_screen(self):
+        # 判断飞出可视区域
+        return not (0 < self.anim_x < WIDTH and 0 < self.anim_y < HEIGHT)
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        pygame.display.set_caption("一箭又一箭")
+        self.clock = pygame.time.Clock()
+        self.state = STATE_START
+        self.cur_level = 0
+        self.arrows = []
+        self.mistake_left = MAX_MISTAKE
+        self.arrow_remain = 0
+        self.font_big = pygame.font.SysFont("simhei", 36)
+        self.font_mid = pygame.font.SysFont("simhei", 28)
+        self.font_arrow = pygame.font.SysFont("simhei", 42)
+        # 【修改】游玩界面重新开始按钮放在右上角，避开棋盘，不遮挡方格
+        self.btn_restart = pygame.Rect(WIDTH - 140, 10, 130, 45)
+        self.start_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 - 30, 200, 60)
+        self.next_level_btn = pygame.Rect(WIDTH // 2 - 100, HEIGHT // 2 + 20, 200, 60)
         # 三个关卡：(行, 列, 方向)
         self.levels = [
             [
