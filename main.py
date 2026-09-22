@@ -23,14 +23,14 @@ DIR_RIGHT = 0
 DIR_UP = 1
 DIR_DOWN = 2
 DIR_LEFT = 3
-# # 方向偏移：(行变化, 列变化)
-# DIR_DELTA = [
-#     (0, 1),   # 右
-#     (-1, 0),  # 上
-#     (1, 0),   # 下
-#     (0, -1)   # 左
-# ]
-# # 方向像素增量（飞行动画每帧移动像素）
+# 方向偏移：(行变化, 列变化)
+DIR_DELTA = [
+    (0, 1),   # 右
+    (-1, 0),  # 上
+    (1, 0),   # 下
+    (0, -1)   # 左
+]
+# 方向像素增量（飞行动画每帧移动像素）
 DIR_PIXEL_DELTA = [
     (6, 0),   # 右
     (0, -6),  # 上
@@ -297,21 +297,21 @@ class Game:
                                 self.load_level(self.cur_level)
                     elif self.state == STATE_LOSE:
                         if self.btn_restart.collidepoint(mx, my):
-                            self.load_level(self.cur_level)
-            self.update()
-            if self.state == STATE_START:
-                self.draw_start()
-            elif self.state == STATE_PLAY:
-                self.draw_game()
-            elif self.state == STATE_WIN:
-                self.draw_win()
-            elif self.state == STATE_LOSE:
-                self.draw_lose()
-            self.clock.tick(60)
-if __name__ == "__main__":
-    try:
-        g = Game()
-        g.run()
-    except Exception as e:
-        print(e)
-        input("按回车退出")
+#                             self.load_level(self.cur_level)
+#             self.update()
+#             if self.state == STATE_START:
+#                 self.draw_start()
+#             elif self.state == STATE_PLAY:
+#                 self.draw_game()
+#             elif self.state == STATE_WIN:
+#                 self.draw_win()
+#             elif self.state == STATE_LOSE:
+#                 self.draw_lose()
+#             self.clock.tick(60)
+# if __name__ == "__main__":
+#     try:
+#         g = Game()
+#         g.run()
+#     except Exception as e:
+#         print(e)
+#         input("按回车退出")
